@@ -32,33 +32,19 @@ class DanmakuAPIClient:
         self.session.mount("http://", adapter)
         self.session.mount("https://", adapter)
         
-    def get_completed_tasks(self, start_time: datetime, end_time: datetime) -> List[Dict]:
+    def get_completed_tasks(self) -> List[Dict]:
         """
-        获取指定时间范围内完成的任务
-        
-        Args:
-            start_time: 开始时间
-            end_time: 结束时间
-            
-        Returns:
-            完成的任务列表
+        获取已完成的任务
         """
-        try:
-            # 计算时间戳
-            start_timestamp = int(start_time.timestamp())
-            end_timestamp = int(end_time.timestamp())
-            
+        try:            
             # 构造请求URL
             url = f"{self.base_url}/api/control/tasks"
             params = {
                 "status": "completed",
-                "start_time": start_timestamp,
-                "end_time": end_timestamp,
-                "limit": 100  # 限制每次请求的任务数量
+                "api_key": self.api_key
             }
             
             headers = {
-                "Authorization": f"Bearer {self.api_key}",
                 "Content-Type": "application/json"
             }
             

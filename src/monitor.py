@@ -111,7 +111,7 @@ class TaskMonitor:
                 # 结束时间设置为当前时间
                 start_time = last_check_time - timedelta(seconds=TIME_WINDOW_BUFFER)
                 end_time = datetime.now()
-                tasks = self.api_client.get_completed_tasks(start_time, end_time)
+                tasks = self.api_client.get_completed_tasks()
                 if tasks is None:
                     logger.error("获取任务列表失败，跳过本次检查")
                     time.sleep(CHECK_INTERVAL)
