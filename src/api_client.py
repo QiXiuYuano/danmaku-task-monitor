@@ -49,7 +49,7 @@ class DanmakuAPIClient:
             end_timestamp = int(end_time.timestamp())
             
             # 构造请求URL
-            url = f"{self.base_url}/tasks"
+            url = f"{self.base_url}/api/control/tasks"
             params = {
                 "status": "completed",
                 "start_time": start_timestamp,
