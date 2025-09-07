@@ -51,8 +51,7 @@ class DanmakuAPIClient:
             response = self.session.get(url, params=params, headers=headers, verify=False)
             response.raise_for_status()
             
-            data = response.json()
-            tasks = data.get("tasks", [])
+            tasks = response.json()
             
             logger.info(f"获取到 {len(tasks)} 个完成的任务")
             return tasks
