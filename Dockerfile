@@ -19,8 +19,9 @@ RUN pip install --no-cache-dir -r requirements.txt
 # 复制源代码
 COPY src/ ./src
 
-# 创建数据和日志目录
-RUN mkdir -p data logs
+# 创建数据和日志目录，并确保appuser有写权限
+RUN mkdir -p data logs \
+    && chmod -R 777 data logs
 
 # 更改工作目录所有权
 RUN chown -R appuser:appgroup /app
