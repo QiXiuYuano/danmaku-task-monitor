@@ -36,11 +36,11 @@ class TaskMonitor:
             try:
                 return datetime.fromisoformat(last_check_str)
             except ValueError:
-                logger.warning("状态文件中的时间格式不正确，使用1小时前作为检查起点")
-                return datetime.now() - timedelta(hours=1)
+                logger.warning("状态文件中的时间格式不正确，使用0.5小时前作为检查起点")
+                return datetime.now() - timedelta(hours=0.5)
         else:
             logger.info("状态文件中没有上次检查时间，使用当前时间作为检查起点")
-            return datetime.now() - timedelta(hours=1)
+            return datetime.now()  # 修改这里，直接返回当前时间而不是1小时前
 
     def _filter_new_tasks(self, tasks: List[Dict], last_check_time: datetime) -> List[Dict]:
         """
