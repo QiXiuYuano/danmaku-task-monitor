@@ -34,14 +34,9 @@ services:
       - TELEGRAM_BOT_TOKEN=Telegram机器人Token
       - TELEGRAM_CHAT_ID=接收通知的聊天ID
       
-      # 时区配置（可选，默认Asia/Shanghai）
-      - TZ=Asia/Shanghai
-      
       # 其他可选配置
       - CHECK_INTERVAL=60
-      - TIME_WINDOW_BUFFER=60
-      - MAX_TASKS_TO_PROCESS=50
-      - LOG_LEVEL=INFO
+      - MAX_TASKS_TO_PROCESS=20
       - LOG_BACKUP_COUNT=7
 ```
 
@@ -63,10 +58,8 @@ docker-compose up -d
 #### 可选配置
 
 - `CHECK_INTERVAL`: 检查间隔(秒，默认60秒)
-- `TIME_WINDOW_BUFFER`: 时间窗口缓冲(秒，默认60秒)
-- `MAX_TASKS_TO_PROCESS`: 每次最多处理的任务数(默认50个)
+- `MAX_TASKS_TO_PROCESS`: 每次最多处理的任务数(默认20个)
 - `LOG_BACKUP_COUNT`: 日志文件保留天数(默认7天)
-- `TZ`: 时区设置(默认Asia/Shanghai)
 
 ### 本地开发
 

@@ -23,25 +23,16 @@ TELEGRAM_CHAT_ID = os.getenv("TELEGRAM_CHAT_ID", "")
 
 # 监控检查间隔(秒)，默认60秒(1分钟)
 CHECK_INTERVAL = int(os.getenv("CHECK_INTERVAL", 60))
-# 时间窗口缓冲(秒)，默认60秒(1分钟)
-TIME_WINDOW_BUFFER = int(os.getenv("TIME_WINDOW_BUFFER", 60))
-# 每次最多处理的任务数，默认50个
+# 每次最多处理的任务数，默认20个
 MAX_TASKS_TO_PROCESS = int(os.getenv("MAX_TASKS_TO_PROCESS", 50))
 
 # 状态文件路径
 STATE_FILE_PATH = os.getenv("STATE_FILE_PATH", "data/monitor_state.json")
 
-# 日志级别，默认为 INFO
-LOG_LEVEL = os.getenv("LOG_LEVEL", "INFO")
 # 日志文件路径
 LOG_FILE_PATH = os.getenv("LOG_FILE_PATH", "logs/monitor.log")
 # 日志文件保留天数，默认为7天
 LOG_BACKUP_COUNT = int(os.getenv("LOG_BACKUP_COUNT", 7))
-
-# 已处理任务ID列表最大大小，默认为1000
-MAX_PROCESSED_TASKS = int(os.getenv("MAX_PROCESSED_TASKS", 1000))
-# 状态文件最大保留天数，默认为7天
-STATE_FILE_MAX_AGE = int(os.getenv("STATE_FILE_MAX_AGE", 7))
 
 # Telegram通知消息模板
 TELEGRAM_MESSAGE_TEMPLATE = os.getenv("TELEGRAM_MESSAGE_TEMPLATE", """

@@ -17,15 +17,7 @@ class TelegramNotifier:
         self.message_template = TELEGRAM_MESSAGE_TEMPLATE
         
     def send_task_completion_notification(self, task: Dict) -> bool:
-        """
-        发送任务完成通知
-        
-        Args:
-            task: 任务信息
-            
-        Returns:
-            发送是否成功
-        """
+        """发送任务完成通知"""
         try:
             # 构造通知消息
             message = self._format_task_message(task)

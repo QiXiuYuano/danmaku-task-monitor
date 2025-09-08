@@ -33,9 +33,7 @@ class DanmakuAPIClient:
         self.session.mount("https://", adapter)
         
     def get_completed_tasks(self) -> List[Dict]:
-        """
-        获取已完成的任务
-        """
+        """ 获取已完成的任务 """
         try:            
             # 构造请求URL
             url = f"{self.base_url}/api/control/tasks"

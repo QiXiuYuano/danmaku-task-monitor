@@ -26,10 +26,13 @@ RUN mkdir -p data logs \
 # 更改工作目录所有权
 RUN chown -R appuser:appgroup /app
 
-# 切换到非root用户
-USER appuser
+# 设置默认时区环境变量
+ENV TZ=Asia/Shanghai
 
 # 设置环境变量
 ENV PYTHONPATH=/app
+
+# 切换到非root用户
+USER appuser
 
 CMD ["python", "-m", "src.main"]
