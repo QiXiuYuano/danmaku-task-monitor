@@ -83,7 +83,7 @@ class TaskMonitor:
                 self.processed_task_ids_list.append(task["taskId"])
                 if len(self.processed_task_ids_list) > self.RECENT_TASKS_LIMIT:
                     self.processed_task_ids_list.pop(0)
-                logger.info(self.processed_task_ids_list)
+                # logger.info(self.processed_task_ids_list)
 
                 # 状态文件历史任务列表更新
                 self.state["processed_tasks"] = self._add_processed_task(
