@@ -47,7 +47,7 @@ class TaskMonitor:
         
         # 只处理最近的MAX_TASKS_TO_PROCESS个任务
         tasks_to_process = tasks[:MAX_TASKS_TO_PROCESS]
-        logger.info(f"[监控轮次 {self.round_no}] 筛选出任务列表中最近 {len(tasks_to_process)} 个已完成任务")
+        logger.info(f"[监控轮次 {self.round_no}] 从任务列表中筛选出最近 {len(tasks_to_process)} 个已完成任务")
         
         # 遍历筛选后的任务列表
         for task in tasks_to_process:

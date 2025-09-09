@@ -49,7 +49,7 @@ class DanmakuAPIClient:
                 logger.error(f"{log_prefix}响应不是有效的 JSON: {response.text[:200]}...")
                 return []
 
-            logger.info(f"{log_prefix}从API接口获取任务列表成功，共 {len(tasks)} 个已完成任务")
+            # logger.info(f"{log_prefix}从API接口获取任务列表成功，共 {len(tasks)} 个已完成任务")
             return tasks
             
         except requests.exceptions.RequestException as e:
