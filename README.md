@@ -58,7 +58,7 @@ docker-compose up -d
 #### 可选配置
 
 - `CHECK_INTERVAL`: 检查间隔(秒，默认60秒)
-- `MAX_TASKS_TO_PROCESS`: 每次最多处理的任务数(默认20个)
+- `MAX_TASKS_TO_PROCESS`: 每次最多监控处理的任务数(默认20个)
 - `LOG_BACKUP_COUNT`: 日志文件保留天数(默认7天)
 
 ### 本地开发
@@ -89,8 +89,6 @@ python -m src.main
 
 - 🎯 实时监控弹幕服务后台任务状态
 - 📢 通过Telegram发送任务完成通知
-- 🔁 自动去重处理，避免重复通知
-- ⏱️ 可配置的检查间隔和时间窗口
 
 
 ## 许可证
